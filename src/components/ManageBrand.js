@@ -13,7 +13,7 @@ class ManageBrand extends Component {
     }
 
     componentDidMount() {
-        axios.get(this.state.API_URL + '/brand/getlistbrand')
+        axios.get(this.state.API_URL + '/getlistbrand')
         .then((res) => {
             this.setState({ brandList: res.data })
         })
@@ -38,7 +38,7 @@ class ManageBrand extends Component {
 
             formData.append('data', JSON.stringify(data)); //Convert object javascript menjadi JSON
 
-            axios.post(this.state.API_URL + '/brand/addbrand', formData, headers)
+            axios.post(this.state.API_URL + '/addbrand', formData, headers)
             .then((res) => {
                 alert("Add Brand Success");
                 this.setState({ brandList: res.data });
@@ -54,7 +54,7 @@ class ManageBrand extends Component {
 
     onBtnDeleteClick = (id) => {
         if(window.confirm('Are you sure to delete?')) {
-            axios.delete(this.state.API_URL + '/brand/deletebrand/' + id)
+            axios.delete(this.state.API_URL + '/deletebrand/' + id)
             .then((res) => {
                 alert('Delete Success');
                 this.setState({ brandList: res.data });
@@ -82,7 +82,7 @@ class ManageBrand extends Component {
         }
         formData.append('data', JSON.stringify(data))
 
-        axios.put(this.state.API_URL + '/brand/editbrand/' + id, formData, headers)
+        axios.put(this.state.API_URL + '/editbrand/' + id, formData, headers)
         .then((res) => {
             alert("Edit Brand Success")
             this.setState({ brandList: res.data, selectedEditBrandId: 0 })
