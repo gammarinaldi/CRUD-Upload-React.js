@@ -9,7 +9,8 @@ class ManageBrand extends Component {
         AddBrandImage: 'Pilih Gambar', 
         EditBrandImage: 'Pilih Gambar', 
         selectedEditBrandId: 0,
-        API_URL: 'https://gamma-nodejs-mysql.herokuapp.com'
+        //API_URL: 'https://gamma-nodejs-mysql.herokuapp.com'
+        API_URL: 'http://localhost:1997'
     }
 
     componentDidMount() {
